@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+<head>
+    <title>21 Savage Fan Site</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+ <section class="services"> 
+
+  <% if (user.local.email) { %>
+    
+      <h2> Services </h2>
+      <form class="" action="/service" method="Post">
+        <input type="text" value="<%= user.local.email %>" name="name">
+        <input type="text" placeholder="dogbreed" name="breed">
+
+          <div>
+            <input type= "checkbox" value="walkingDog" name="task" id="walkingDog" >
+            <label>Walking Dog</label>
+            <!-- <image></image> -->
+          </div>
+
+          <div>
+            <input type="checkbox" value="washingDog" name="task" id="washingDog" >
+                <label>Washing Dog</label>
+                <!-- <image></image> -->
+          </div>
+          <div>
+            <input type="checkbox" value="clipNails" name="task" id="clipNails">
+                <label>Clip Dog Nails</label>
+                <imaage></imaage>
+          </div>
+          <div>
+            <input type="checkbox" value="dogSit" name="task" id="dogSit">
+                <label> Dog Sit Dog</label>
+                <imaage></imaage>
+          </div>
+          <div>
+            <input type="checkbox" value="trainDog" name="task" id="trainDog">
+                <label>Train Dog </label>
+                <imaage></imaage>
+          </div>
+
+
+        <h2> When </h2>
+
+        <div>
+          <input type="checkbox" value="Monday" name="days" id="Monday">
+          <label>   Monday</label>
+        
+        </div>
+
+        <div>
+          <input type="checkbox" value="tuesDay" name="days" id="Tuesday">
+          <label>   Tuesday</label>
+          
+        </div>
+        <div>
+          <input type="checkbox" value="wednesDay" name="days" id="Wednesday">
+          <label>Wednesday</label>
+        
+        </div>
+        <div>
+          <input type="checkbox" value="thursDay" name="days" id="Thurday">
+          <label>  Thursday</label>
+          
+        </div>
+        <div>
+          <input type="checkbox" value="friDay" name="days" id="Friday">
+          <label>   Friday </label>
+        
+        </div>
+        <div>
+          <input type="checkbox" value="satDay" name="days" id="Saturday">
+          <label>Saturdays </label>
+          
+        </div>
+        <div>
+          <input type="checkbox" value="sunDay" name="days" id="Sunday">
+          <label>Sunday</label>
+          
+        </div>
+
+        <p>
+          <input type="text"  name="details">
+          <label>prefertime/other details</label>
+
+        </p>
+        <div>
+        <label for="date">Begin Date</label>
+        <input type="date" id="beginDate" name="beginDate">
+        </div>
+
+        <button type="submit">Submit</button>
+
+      </form>
+    
+  <% } %>
+
+ </section>
+ <section class= "services request">
+    
+      <h3> Reservation</h3>
+      <ul class="service">
+        <% for(let i=0; i <service.length; i++) {%>
+          <li class="message messages3">
+        
+        <section id = "<%=service[i]._id%>">
+         <span <%= service[i].completed ? 'class = completed' : 'class= uncompleted' %>> <%= service[i].name %> </span> 
+            <span><i class="fa-solid fa-check"></i></span>
+            <p> <%= service[i].breed %> </p>
+            <span <%= service[i].completed ? 'class = completed' : 'class= uncompleted' %>> <%= service[i].task %> </span>
+            <p> <%= service[i].days %> </p>
+            <p> <%= service[i].details %> </p>
+            <span> <%= service[i].beginDate %> </span>
+            <span><i class="fa fa-ban" aria-hidden="true"></i></span>
+          </li>
+        <% } %>
+      </ul>
+    
+    <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+ </section>   
+
+<script src="main.js"></script>
+
+</body>
+</html>

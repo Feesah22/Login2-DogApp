@@ -1,0 +1,33 @@
+body{
+  padding-top:40px;
+  background-image: url(img/loginback.png);
+  word-wrap:break-word;
+  padding:20px;
+
+}
+
+img{
+  height: 400px;
+}
+
+.completed {
+  color: red;
+}
+
+.services{
+  width:50%;
+  float:left;
+  background-color: yellow;
+  padding-left:20px;
+
+}
+
+.request{
+  background-color: black;
+  color:aliceblue;
+}
+
+p{
+  margin-bottom: 0px;
+}
+
